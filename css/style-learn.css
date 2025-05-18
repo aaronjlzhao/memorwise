@@ -1,0 +1,151 @@
+html {
+    height:100%;
+}
+body{
+    margin: 0 0 0 0;
+}
+#loading-screen{
+    height:100%;
+}
+
+#dashboard-loading-spinner{
+    position: absolute;
+    top:50%;
+    left:45%;
+}
+.spinner-grow.text-primary{
+    color:#1E73BE !important;
+}
+
+.hidden {
+    display:none;
+}
+
+#upgrade-to-premium {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1E73BE;
+    color: white;
+
+}
+.advertisement-text{
+    color:#616161;
+    font-weight: bold;
+    font-size:17px;
+}
+#word-input{
+    border:solid #616161;
+}
+#word-input:focus{
+    outline-width: 0;
+    border:solid #1E73BE;
+}
+
+.card-and-description{
+    margin-top:50px;
+    margin-bottom: 10px;
+    display:flex;
+    background-color: none;
+    padding: 0 80px 0 80px;
+}
+@media screen and (max-width: 1200px) {
+    .card-and-description{
+        margin-top:50px;
+        margin-bottom: 50px;
+        display:flex;
+        padding: 0 0 0 0;
+    }
+}
+
+.card-container{
+    width: 170px;
+    display:block;
+}
+/* if screen size smaller than 768px wide, make card disappear entirely */
+
+.level-description{
+    margin-left:0;
+}
+.table-header{
+    position: sticky;
+    top:65px;
+    white-space: nowrap;
+    z-index: 100;
+}
+
+
+tr{
+    height:50px;
+    vertical-align: middle;
+}
+.word{
+    color:#1E73BE;
+    font-weight: bold;
+    transition: opacity 0.12s;
+}
+.definition{
+    transition: opacity 0.12s;
+}
+.definition:hover{
+    background-color: none;
+}
+.synonyms{
+    transition: opacity 0.12s;
+}
+#word-checkbox, #definition-checkbox, #synonyms-checkbox{
+    margin-left:3px;
+}
+#word-checkbox:checked, #definition-checkbox, #synonyms-checkbox{
+    background-color: #1E73BE;
+}
+.hide-button-row{
+    display:flex;
+    width:100%;
+    background-color: none;
+    justify-content: space-around;
+    position:sticky;
+    top:20px;
+}
+.hide-button{
+    width:160px;
+}
+
+.table-container{
+    margin: 100px;
+}
+
+#get-prem-notif-table:hover{
+    cursor: pointer;
+    opacity: 0.77;
+    transition: opacity 0.25s;
+}
+#get-prem-notif-table:active{
+    cursor: pointer;
+}
+
+/* tablet css */
+@media screen and (max-width: 768px) { 
+    .card-and-description{
+        margin-top:50px;
+        margin-bottom: 50px;
+        display:inline;
+        padding: 0 0 0 0;
+    }
+    .level-description{
+        margin-left:0px;
+    }
+    .card-container{
+        width: 100%;
+        background-color: none;
+        display:flex;
+        justify-content: center;
+        margin-top:40px;
+        margin-bottom:40px;
+    }
+}

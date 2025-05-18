@@ -1,0 +1,212 @@
+
+.login-widget{
+    position: absolute;
+    top:15%;
+    width:350px;
+    display:flex;
+    flex-direction: column;
+}
+.setup-widget{
+    position: absolute;
+    top:40%;
+    width:375px;
+    display:flex;
+    flex-direction: column;
+}
+.setup-button-mods{
+    border-radius: 50px;
+    font-weight: bold;
+    color:#1E73BE;
+    background-color: #E9ECEF !important;
+    -webkit-filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+    -ms-filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+    filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+    transition: opacity 0.25s;
+}
+.setup-button-mods:hover{
+    opacity:0.76;
+    color:#1E73BE;
+    transition: opacity 0s; 
+}
+.setup-button-mods:active{
+    opacity:0.76;
+    opacity:1;
+    color:#1E73BE;
+    -webkit-filter: none;
+    -ms-filter: none;
+    filter: none;
+    transition: opacity 0s; 
+}
+
+
+.calendar{
+    background-color: #1E73BE;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+}
+input[type="date"]:hover{
+    cursor:pointer;
+}
+
+input[type="date"]:focus {
+    color: white; /* Text color */
+}
+    
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.skip-text{
+    font-size: 13px;
+}
+
+#login-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding:10px;
+    border-radius: 10px 0 0 10px;
+    border-right-style: solid blue;
+    font-weight: bold;
+    color:white;
+    transition: background-color 0.3s;
+}
+
+@media only screen and (max-width: 672px) {
+    .login-widget{
+        width:280px;
+        top:15%;
+    }
+}
+
+#signup-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding:10px;
+    border-radius: 0 10px 10px 0;
+    font-weight: bold;
+    color:white;
+    transition: background-color 0.3s;
+}
+
+#forgot-password{
+    font-size:14px;
+    font-weight: 500;
+    color:#616161;
+    margin-top:4px;
+}
+#forgot-password:hover{
+    opacity:0.77;
+    cursor:pointer;
+}
+#create-password-warning, #create-username-warning, #create-email-warning {
+    font-size:14px;
+    margin-top:4px;
+    display: block;
+    letter-spacing: 1px;
+}
+#sign-up-input-box{
+    display:none;
+}
+.invalid{
+    color:red;
+}
+.valid{
+    color:green;
+}
+#recapchta{
+    display: none;
+}
+.continue-button{
+    border:none;
+    width:100%;
+    margin-top:0px;
+    color:white;
+    background-color: #1E73BE;
+    border-radius: 7px;
+    display:flex;
+    justify-content: center;
+    padding: 5px;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    -webkit-filter: drop-shadow(0px 4px 3px rgb(0,0,0,0.20));
+    -ms-filter: drop-shadow(0px 4px 3px rgb(0,0,0,0.20));
+    filter: drop-shadow(0px 4px 3px rgb(0,0,0,0.20));
+    transition: opacity 0.15s;    
+}
+.continue-button:hover{
+    opacity:0.77;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.continue-button:active{
+    opacity:1;
+    color:white;
+    -webkit-filter: none;
+    -ms-filter: none;
+    filter: none;
+    transition: opacity 0s; 
+}
+.active{
+    background-color: #7c7c7c;
+}
+.not-active{
+    background-color: #bababa;
+}
+
+.button{
+    opacity: 1;
+    transition: opacity 0s;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    -webkit-filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+    -ms-filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+    filter: drop-shadow(0px 4px 2px rgb(0,0,0,0.20));
+}
+.button:hover{
+    opacity: 0.76;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    
+}
+.button:active{
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0s;
+    -webkit-filter: none;
+    -ms-filter: none;
+    filter: none;
+}
+
+#eye, #eye-slash{
+    position:absolute;
+    width:23px;
+    top:17px;
+    right:13px;
+}
+#eye {
+    display:none;
+}
+#eye:hover, #eye-slash:hover {
+    cursor:pointer;
+}
+#eye:active, #eye-slash:active {
+    cursor:pointer;
+}
+
+#error-message {
+    display:none;
+    justify-content: right;
+    color:red;
+    margin-top: 5px;
+}

@@ -1,0 +1,93 @@
+.title-schedule {
+    color: #CC9900;
+}
+
+.schedule-module{
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:70px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress {
+    width: 100%;
+    height: 20px; /* Adjust height as needed */
+}
+.schedule-progress-bar-container{
+    background-color: white !important;
+    border-radius: 7px;
+}
+.schedule-progress-bar{
+    background-color: #1E73BE !important;
+    border-radius: 7px;
+}
+.schedule-review-button{
+    
+    margin-left: 30px;
+    padding:5px 5px 5px 5px;
+    border-radius: 10px;
+    color:white;
+    min-width:70px;
+    display:flex;
+    justify-content: center;
+}
+.button-blue{
+    background-color: #1E73BE;
+}
+.button-gold{
+    background-color: #CC9900;
+}
+.schedule-module-text-container{
+    display:flex;
+    justify-content:center; 
+    align-items:center;
+    min-width: 70px;
+    background-color: none;
+    margin-right:10px;
+    font-size:23px;
+}
+
+@media only screen and (max-width:672px) {
+    .schedule-module-text-container{
+        font-size:18px;
+        text-wrap: nowrap;
+        min-width: 50px;
+    }
+    .schedule-review-button{
+        margin-left:18px;
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom:20px;
+    margin-top:20px;
+    color:#616161;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: #A9A9A9;
+}
+
+.centered-word {
+    padding: 0 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.not-started{
+    opacity: 0.3;
+    pointer-events: none;
+}

@@ -1,0 +1,195 @@
+html {
+    height:100%;
+}
+body{
+    height:100%;
+}
+
+p{
+    font-weight: 500;
+    color:#616161;
+    margin:0;
+    padding: 0;
+}
+h3{
+    font-weight: 500;
+    color: #616161;
+}
+
+.text-primary {
+    color:#1E73BE !important;
+}
+
+.character-and-progressbars{
+    display: flex;
+    padding:0 80px 0 80px;
+    margin-bottom: 50px;
+}
+.progress-bars{
+    padding-left: 120px;
+    height: 320px;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+.character-container{
+    position:relative;
+    min-width:111px;
+    height:160px;
+    margin-bottom:20px; 
+    margin-top:100px;
+    z-index: 2;
+}
+.progress-bar-mods{
+    border-radius: 100px;
+    height:17px;
+}
+.stat p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: thick;
+    text-wrap: nowrap;
+}
+.row-add-margin-bottom{
+    margin-bottom:30px;
+}
+#settings-menu{
+    position:absolute;
+
+    width:160px;
+    height:100px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+}
+.settings-menu-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    width: 100%;
+    color:#616161;
+    transition:opacity 0.25s; 
+}
+.settings-menu-item:hover{
+    cursor: pointer;
+}
+.top-border{
+    border-radius: 8px 8px 0px 0px;
+}
+.bottom-border{
+    border-radius: 0px 0px 8px 8px;
+}
+.settings-menu-item:hover{
+    opacity: 0.5;
+}
+#settings-button{
+    position:absolute;
+
+    width:42px;
+    height:42px;
+    border-radius: 100px;
+    background-color: #D9D9D9;
+    transition:opacity 0.25s;
+    padding-top:2px;
+}
+#settings-button:hover{
+    opacity:0.66;
+    cursor: pointer;
+    
+}
+#settings-button:active{
+    opacity: 1;
+    cursor: pointer;
+    transition:opacity 0;
+}
+#delete-account-link{
+    margin-bottom:10px;font-weight:bold;color:#B32E2E;
+}
+#delete-account-link:hover{
+    cursor: pointer;
+    opacity: 0.77;
+}
+
+#confirmation-page{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* 100% of the viewport height */
+}
+#confirm{
+    padding:10px 30px 10px 30px;
+    background-color: #1E73BE;
+    color:white;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 7px;
+    transition: opacity 0.25s;
+}
+#cancel{
+    padding:10px 30px 10px 30px;
+    background-color: #D9D9D9;
+    color:#616161;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 7px;
+    transition: opacity 0.25s;
+}
+#cancel:hover, #confirm:hover{
+    cursor: pointer;
+    opacity: 0.77;
+}
+#cancel:active, #confirm:active{
+    cursor: pointer;
+    opacity: 1;
+}
+@media only screen and (max-width: 672px) {
+    .character-and-progressbars{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding:0;
+    }
+    .progress-bars{
+        padding-left: 0;
+        padding-top:20px;
+    }
+    .stat p{
+        font-size:15px;
+    }
+
+}
+
+
+@media only screen and (max-width: 672px) {
+    #settings-button{
+        right:19px;
+        top:80px;
+    }
+    #settings-menu{
+        right:19px;
+        top:138px;
+    }
+}
+
+@media only screen and (min-width: 672px) and (max-width: 1120px) {
+    #settings-button{
+        right:27px;
+        top:96px;
+    }
+    #settings-menu{
+        right:27px;
+        top:154px;
+    }
+}
+@media only screen and (min-width:1120px) {
+    #settings-button{
+        right:27px;
+        top:82px;
+    }
+    #settings-menu{
+        right:27px;
+        top:140px;
+    }
+}
