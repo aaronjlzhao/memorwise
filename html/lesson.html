@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/public/css/style-lesson.css" rel="stylesheet">
+    <link href="/public/css/global.css" rel="stylesheet">
+    <title>Lesson</title>
+
+</head>
+<body>
+    <div class=" w-100 h-100 justify-content-center align-items-center" style="opacity:0; display:flex;" id="loading-screen">
+        <div>
+            <div class="d-flex">
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class=" w-100 h-100 justify-content-center align-items-center" style="display:flex; opacity:0; z-index: 2;" id="results-screen">
+        <div>
+            <span id="result-congratulations">干得漂亮!</span>
+            <p class="result-text mt-2"><span id="result-text-1">你的准确率: </span><span style="color:#1E73BE; font-weight: bold; padding-left:9px;" id="accuracy-rate"></span></p>
+            <p class="result-text" id="result-text-2">学到的点数: <span style="color:#1E73BE; font-weight: bold;" id="coins-earned"></span></p>
+            <div class="d-flex justify-content-center align-items-center">
+                <button id="review-screen-button" style="color:#1E73BE">Review</button>
+                <button class="exit-screen-button" style="color:#616161">Exit</button>
+            </div>
+        </div>
+    </div>
+    <div class=" w-100 h-100 justify-content-center" style="display:none;opacity:0; z-index: 1;" id="review-screen">
+        <div style="margin-top:200px;">
+            <div id="review-screen-container">
+                <!-- <div class="word-review correct-word"><span><span>Word</span>: <span>definition</span></span></div>
+                <div class="word-review incorrect-word"><span><span>Word</span>: <span>definition</span></span></div>
+                <div class="word-review incorrect-word"><span><span>Word</span>: <span>definition</span></span></div> -->
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button class="exit-screen-button" style="color:#616161; margin-bottom: 100px;">Exit</button>
+            </div>
+        </div>
+        
+    </div>
+    <div style="z-index: 100;" id="close-button-container"><img src="/src/svg/close-button.svg" id="close-button"></div>
+    
+    <!-- Progress Bar -->
+    <div id="countdown-container" style="opacity:0;" class="w-100 h-100 d-flex justify-content-center">
+        <div id="traffic-light-container">
+                <img src="/src/svg/traffic-light-base.svg" id="traffic-light-base">
+                <img src="/src/svg/traffic-light-red.svg" style='opacity:1;' id="traffic-light-red">
+                <img src="/src/svg/traffic-light-yellow.svg" style='opacity:0.3;' id="traffic-light-yellow">
+                <img src="/src/svg/traffic-light-green.svg" style='opacity:0.3;' id="traffic-light-green">
+        </div>
+    </div>
+    
+    <div id="lesson" style="opacity:0; z-index: 3;">
+        
+        <div class="lesson-content-container">
+            <div style="position: relative;">
+                <div class="progress progress-bar-mods small-shadow"  id="progress-bar-container">
+                    <div 
+                        class="progress-bar" 
+                        id="user-progress"
+                        role="progressbar" 
+                        style="background-color:#1E73BE !important;">
+                    </div>
+                </div>
+                <div class="w-100 justify-content-left " id="challenge-progress-display-container">
+                    <div style="background-color: #1E73BE;opacity:1;height:50px;border-radius:100px;display:flex;justify-content:center;align-items:center;color:white;font-size:17px;" id='challenge-progress-display' class="small-shadow gold">
+                        <span id="challenge-score">0</span>
+                    </div>
+                </div>
+                <div style="position:absolute;right:10px;" id="countdown-module">
+                    <div class="countdown-timer-container" style="display:flex; justify-content: end;">
+                        <span id="timer" class="time">00:00</span>
+                    </div>  
+                </div>           
+            </div>
+            <div id="qna-container"  style="opacity:0;">
+                <div class="prompt-word-container">
+                    <div class="prompt" id="prompt-chinese">
+                        <span class="word" id="define-word-prompt"></span>
+                        <span class="remainder" id="variable-prompt">的意思是</span> 
+                    </div>
+                    <div class="prompt d-none" id="prompt-english">
+                        <span class="remainder me-3">The definition of</span> 
+                        <span class="word me-3"></span>
+                        <span class="remainder">is...</span> 
+                        
+                    </div>
+                </div>
+                <div>
+                    <!-- <input type="text" id="input-box" placeholder=" Start writing here..."> -->
+                    <div class="answer-row-container d-none">
+                        <div class=" btn answer-button-mods">Inconsequential </div>
+                        <div class=" btn answer-button-mods">Abuse</div>
+                        <div class=" btn answer-button-mods">Subside</div>
+                        <div class=" btn answer-button-mods">Illustrious</div>
+                    </div>
+                    <div class="definition-row-container" id="definition-row-container">
+                        <div class="choice btn def-button-mods" id="choice-one"></div>
+                        <div class="choice btn def-button-mods" id="choice-two"></div>
+                        <div class="choice btn def-button-mods" id="choice-three"></div>
+                        <div class="choice btn def-button-mods" id="choice-four"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="fixed-bottom">
+            <div class="buttons-and-character-row">
+                <div class="col">
+                    <div class="left-column">
+                        <img src="/src/svg/hint-button.svg" id='hint-button' class="d-block mx-auto skip-button">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex align-items-center justify-content-center">
+                            <div class="character-container" style="height:340px;">
+                                        <div id="hint-container" style="display:none;">
+                                            <div class="w-100 h-100 d-flex justify-content-center align-items-center" style="position: relative;">
+                                                <span style="font-weight: bold; color:black;">暗示: <span id="hint-text"> This is a hint</span></span>
+                                                <div id="close-hint-svg">
+                                                    <img src="/src/svg/close-hint-button.svg" style="width: 25px" id="close-hint-button">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div style="position:relative;width:111px;height:160px;margin-bottom:80px;z-index: 2;">
+                                            <div class="small-shadow" style="position:absolute; z-index: 2; top:-20px;">
+                                                <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                                            </div>
+                                            
+                                            <div style="position:absolute;top:-50px;left:18px;z-index: 500;">
+                                                <div class="head-container">
+                                                    <div id="neutral-face-container" style="display:block"> 
+                                                        <div style="position: absolute;top:-82px;left:-35px;z-index: 1000;width: 150px;height: 80px;opacity:1;" class="">
+                                                            <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                                
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                        <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                                        <div style="position: absolute; top:-9px;left:-8px; width:20px;">
+                                                            <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                                        </div>
+                                                        <div style="position: absolute; top:-8px;left:80px;">
+                                                            <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                                        </div>
+                                                        <div style="position: absolute; top:-7px;left:-2px;">
+                                                            <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                                        </div>
+                                                        <div style="position: absolute; top:-7px;left:75px;">
+                                                            <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                                        </div>
+                                                        <div style="position: absolute; top:-25px;left:80px;">
+                                                            <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                                        </div>
+                                                    </div>
+                                                    <div id="glad-face-container"> 
+                                                        <div style="position: absolute;top:-82px;left:-35px;z-index: 1000;width: 150px;height: 80px;opacity:1;" class="">
+                                                            <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                                
+                                                            </div>
+                                                        </div> 
+                                                        <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head-glad">
+                                                        <div style="position: absolute; top:19px;left: 18px;width:20px;">
+                                                            <img src="/src/svg/character/character-left-eye-glad.svg"  style="width:12px;display:auto;" id="character-left-eye-glad">
+                                                        </div>
+                                                        <div style="position: absolute; top:19px;right:130px;width:20px;">
+                                                            <img src="/src/svg/character/character-right-eye-glad.svg" style="width:12px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                                                        </div>
+                                                        <div style="position: absolute; top:7px;left: 13px;width:20px;">
+                                                            <img src="/src/svg/character/character-left-brow-glad.svg" style="width:17px;display:auto;" id="character-left-brow-glad">
+                                                        </div>
+                                                        <div style="position: absolute; top:7px;right:130px;width:20px;">
+                                                            <img src="/src/svg/character/character-right-brow-glad.svg" style="width:17px;display:auto;" id="character-right-brow-glad">
+                                                        </div>
+                                                        <div style="position: absolute; bottom:47px;left:20px;">
+                                                            <img src="/src/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                                                        </div>
+                                                    </div>
+                    
+                                                    <div id="cry-face-container" style="display:none;"> 
+                                                        <div style="position: absolute;top:-82px;left:-35px;z-index: 1000;width: 150px;height: 80px;opacity:1;" class="">
+                                                            <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                                
+                                                            </div>
+                                                        </div> 
+                                                        <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head-cry">
+                                                        <div style="position: absolute; top:20px;left: 16px;width:20px;">
+                                                            <img src="/src/svg/character/character-left-eye-cry.svg"  style="width:14px;display:auto;" id="character-left-eye-cry">
+                                                        </div>
+                                                        <div style="position: absolute; top:20px;right:130px;width:20px;">
+                                                            <img src="/src/svg/character/character-right-eye-cry.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-cry">
+                                                        </div>
+                                                        <div style="position: absolute; top:21px;right:130px;width:20px;">
+                                                            <img src="/src/svg/character/character-right-tear.svg" style="width:12px;z-index: 400;display:auto;" id="character-right-tear">
+                                                        </div>
+                                                        <div style="position: absolute; top:21px;left: 16px;width:20px;">
+                                                            <img src="/src/svg/character/character-left-tear.svg" style="width:12px;z-index: 400;display:auto;" id="character-right-tear">
+                                                        </div>
+                                                        <div style="position: absolute; top:6px;left: 11px;width:20px;">
+                                                            <img src="/src/svg/character/character-left-brow-cry.svg" style="width:15px;display:auto;" id="character-left-brow-cry">
+                                                        </div>
+                                                        <div style="position: absolute; top:6px;right:125px;width:20px;">
+                                                            <img src="/src/svg/character/character-right-brow-cry.svg" style="width:14px;display:auto;" id="character-right-brow-cry">
+                                                        </div>
+                                                        <div style="position: absolute; bottom:47px;left:20px;">
+                                                            <img src="/src/svg/character/character-mouth-cry.svg" style="width:40px;display:auto;" id="character-mouth-cry">
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                    <div id="idea-face-container" style="display:none;"> 
+                                                        <div style="position: absolute;top:-82px;left:-35px;z-index: 1000;width: 150px;height: 80px;opacity:1;" class="">
+                                                            <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                                
+                                                            </div>
+                                                        </div> 
+                                                        <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head-cry">
+                                                        <div style="position: absolute; top:17px;left:20px; width:20px;">
+                                                            <img src="/src/svg/character/character-left-eye-idea.svg" style="width:7px;display:auto;" id="character-left-eye-idea">
+                                                        </div>
+                                                        <div style="position: absolute; top:17px;right:140px;">
+                                                            <img src="/src/svg/character/character-right-eye-idea.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye-idea">
+                                                        </div>
+                                                        <div style="position: absolute; top:7px;left:15px;">
+                                                            <img src="/src/svg/character/character-left-brow-idea.svg" style="width:15px;display:auto;" id="character-left-brow-idea">
+                                                        </div>
+                                                        <div style="position: absolute; top:9px;left:48px;">
+                                                            <img src="/src/svg/character/character-right-brow-idea.svg" style="width:20px;display:auto;" id="character-right-brow-idea">
+                                                        </div>
+                                                        <div style="position: absolute; bottom:10px;left:25px;">
+                                                            <img src="/src/svg/character/character-mouth-idea.svg" style="width:30px;display:auto;" id="character-mouth-idea">
+                                                        </div>
+
+                                                        <div style="position: absolute; top:-10px;left:-60px;">
+                                                            <img src="/src/svg/character/character-lightbulb.svg" style="width:50px;opacity:1;" id="character-lightbulb">
+                                                        </div>
+
+                                                    </div>
+                                                </div>   
+                                            </div>                                      
+                                            <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                                                <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                                            </div>
+                                            <div id="right-arm-container">
+                                                <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                                            </div>
+                                            <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                                                <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="right-column">
+                        <img src="/src/svg/check-button.svg" class="d-block mx-auto check-button" id="check-button">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/public/js/lesson.bundle.js"></script>
+</body>
+</html>

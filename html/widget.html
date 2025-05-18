@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/dist/css/style-dashboard.css" rel="stylesheet">
+    <link href="/dist/css/global.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-mods">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-link ms-3" style="color:#1E73BE;font-weight: bold;" href="dashboard.html">EZvocab</a>
+            <div class="navbar-nav me-4" style>
+                <a class="nav-link disabled">
+                    <div class="coin-container">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="svg/coin.svg" class="coin-icon-style">
+                            <span class="coin-num">2143</span>
+                        </div>
+                        
+                    </div>
+                </a>
+                <a class="nav-link navbar-widget-button" href="widget.html">widgets</a>
+                <a class="nav-link navbar-shop-button" href="#">shop</a>
+                <a class="nav-link navbar-account-button" href="#">account</a>
+            </div>
+        </div>
+    </nav>
+    <a href="dashboard.html">
+        <button class="btn light-grey small-shadow button-mods">Back</button> 
+    </a>
+    <div class="widget-container-mobile">
+        <div class="module-container">
+            <div class="small-shadow module timer-module margin-top">
+                <h4 class="module-title timer-module">Time until exam:</h4>
+                <div class="row timer-countdown-row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="counter">
+                            <span class="timer-counter-value" id="day-counter">0</span>
+                            <p>Days</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="counter">
+                            <span class="timer-counter-value" id="hour-counter">0</span>
+                            <p>Hours</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="counter">
+                            <span class="timer-counter-value" id="min-counter">0</span>
+                            <p>Minutes</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <div class="counter">
+                            <span class="timer-counter-value" id="sec-counter">0</span>
+                            <p>Seconds</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <a href="schedule.html"><div class="btn big-button">View Full Course</div></a>
+            </div>
+            <div class="small-shadow module review-module"> 
+                <h4 class="module-title">Words learned:</h4>
+                <h4 style="color:#1E73BE;font-weight: 700;"><span class="words-memorized">23</span>/<span class="total-words">5000</span></h4>
+                <a href="lesson.html"><div class="btn big-button margin-top">Review Definitions</div></a>
+                <a href="lesson.html"><div class="btn big-button margin-top">Review Synonyms</div></a>
+                <a href="lesson.html"><div class="btn big-button margin-top" style="color:#1E73BE;">Review All</div></a>
+            </div>
+            <div class="small-shadow module leaderboard-module">
+                <h4 class="module-title">Leaderboard:</h4>
+                <div class="leaderboard-list-container">
+                    <div class="player-container gold small-shadow">
+                        <span id="standing-num">1</span>
+                        <span id="gold">ronzeelovesyou</span>
+                        <span id="score">234</sp>
+                    </div>
+                    <div class="player-container silver small-shadow">
+                        <span id="standing-num">2</span>
+                        <span id="silver">username</span>
+                        <span id="score">123</sp>
+                    </div>
+                    <div class="player-container bronze small-shadow">
+                        <span id="standing-num">3</span>
+                        <span id="bronze">username</span>
+                        <span id="score">110</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">100</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">89</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">70</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">63</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">43</sp>
+                    </div>
+                    <div class="player-container">
+                        <span id="standing-num">#</span>
+                        <span>username</span>
+                        <span id="score">21</sp>
+                    </div>
+                </div>     
+                <div class="user-standing-container gray">
+                    <div class="player-container">
+                        <span id="user-num">#</span>
+                        <span id="user-username">username</span>
+                        <span id="user-score">21</sp>
+                    </div>
+                </div>
+                <a href="lesson.html"><div class="btn big-button">Start Challenge</div></a>
+            </div>
+            <div class="module small-shadow weekly-challenges-module">
+                <h4 class="module-title">Weekly Challenges</h4>
+                <p class="challenge">Learn 200 new words</p>
+                <div class="progress progress-bar-challenges-mods small-shadow">
+                    <div 
+                        class="progress-bar shimmer" 
+                        role="progressbar" 
+                        style="width: 50%; background-color:#1E73BE !important;">
+                        <span id="weekly-challenges-completed-lessons">12</span>
+                    </div>
+                </div>
+                <p class="challenge">7 day streak</p>
+                <div class="progress progress-bar-challenges-mods small-shadow">
+                    <div 
+                        class="progress-bar shimmer" 
+                        role="progressbar" 
+                        style="width: 90%; background-color:#1E73BE !important;">
+                        <span id="weekly-challenges-completed-lessons">2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 d-flex justify-content-center align-items-baseline">
+        <h3 class="sorry">Sorry, this page is only available on mobile screens.</h3>
+    </div>
+       
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/dist/js/dashboard.bundle.js" type="text/javascript" defer="defer"></script>
+
+</body>
+</html>

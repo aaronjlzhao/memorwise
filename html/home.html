@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/public/css/style-dashboard.css" rel="stylesheet">
+    <link href="/public/css/global.css" rel="stylesheet">
+    <link href="/public/css/home.css" rel="stylesheet">
+    <title>Memorwise</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-mods" style="min-height:90px;">
+        <div class="drop-down-menu small-shadow" id="drop-down-menu">
+            <a href="#section2"><div class="drop-down-menu-tab">
+                <div class="w-100 h-100 d-flex justify-content-end align-items-center" style="padding-right:10px;">
+                    <div style="padding-right:10px;">工作原理</div>
+                    <div>
+                        <img src="/src/svg/icons/information-icon.svg" id="drop-down-menu-icon-information">
+                    </div>
+                </div>
+            </div></a>
+            <a href="#section3"><div class="drop-down-menu-tab">
+                <div class="w-100 h-100 d-flex justify-content-end align-items-center" style="padding-right:10px;">
+                    <div style="padding-right:10px;">价格</div>
+                    <div>
+                        <img src="/src/svg/icons/dollar-sign-icon.svg" id="drop-down-menu-icon-question">
+                    </div>
+                </div>
+            </div></a>
+            <a href="#section4"><div class="drop-down-menu-tab">
+                <div class="w-100 h-100 d-flex justify-content-end align-items-center" style="padding-right:10px;">
+                    <div style="padding-right:10px;">常见问题</div>
+                    <div>
+                        <img src="/src/svg/icons/question-icon.svg" id="drop-down-menu-icon-question">
+                    </div>
+                </div>
+            </div></a>
+            <div class="drop-down-menu-tab login-button">
+                <div class="w-100 h-100 d-flex justify-content-end align-items-center" style="padding-right:10px;">
+                    <div style="padding-right:10px;">登录 / 注册</div>
+                    <div>
+                        <img src="/src/svg/icons/question-icon.svg" id="drop-down-menu-icon-question">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ps-4 pe-4">
+          <a class="navbar-brand nav-link" style="color:#1E73BE;font-weight: bold;" href="home.html">Memorwise</a>
+            <div class="navbar-nav align-items-center desktop-bar">
+                <div class="d-flex" style="margin:12px;" id="mobile-dropdown">
+                    <a class="nav-link link hamburger-menu-option" href="#section2">工作原理</a>
+                    <a class="nav-link link hamburger-menu-option" href="#section3">价格</a>
+                    <a class="nav-link link hamburger-menu-option" href="#section4">常见问题</a>
+                </div>
+                
+                <a class="nav-link navbar-account-button link login-button"><div class="start-button">开始学习</div></a>
+            </div>
+            <div class="navbar-nav mobile-bar">
+                <a class="nav-link link"><img src="/src/svg/icons/hamburger-menu.svg" id="hamburger-menu"></a>
+            </div>
+        </div>
+    </nav> 
+    <div class="remaining-container dynamic-padding">
+        <div class="d-flex justify-content-center">
+            <div class="justify-content-center character-box" style="width:200px;height:300px;">
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="character" style="position:relative;width:111px;height:160px;margin-bottom:0px;z-index: 2;">
+                        <div class="small-shadow" style="position:absolute; z-index: 2;">
+                            <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                        </div>
+                        <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-left-leg.svg" id="character-left-leg">
+                        </div>
+                        <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-right-leg.svg" id="character-right-leg">
+                        </div>
+                        <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                            <div class="head-container">
+                                <div class="neutral-face-container" style="display:block"> 
+                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                            <img src="/src/svg/character/hats/hat-32.svg" style="width: 70px;">
+                                        </div>
+                                    </div> 
+                                    <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                    <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                        <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                    </div>
+                                    <div style="position: absolute; top:18px;right:23px;">
+                                        <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                    </div>
+                                    <div style="position: absolute; top:13px;left:15px;">
+                                        <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                    </div>
+                                    <div style="position: absolute; top:13px;right:17px;">
+                                        <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                    </div>
+                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                        <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                    </div>
+    
+                                </div>
+                                <div class="glad-face-container" style="display: none;"> 
+                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;">
+                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                            <img src="/src/svg/character/hats/hat-32.svg" style="width: 70px;">
+                                        </div>
+                                    </div>
+                                    <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                    <div style="position: absolute; top:17px;left:19px; width:20px;">
+                                        <img src="/src/svg/character/character-left-eye-glad.svg" style="width:14px;display:auto;" id="character-left-eye-glad">
+                                    </div>
+                                    <div style="position: absolute; top:18px;right:20px;">
+                                        <img src="/src/svg/character/character-right-eye-glad.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                                    </div>
+                                    <div style="position: absolute; top:9px;left:15px;">
+                                        <img src="/src/svg/character/character-left-brow-glad.svg" style="width:14px;display:auto;" id="character-left-brow-glad">
+                                    </div>
+                                    <div style="position: absolute; top:9px;right:17px;">
+                                        <img src="/src/svg/character/character-right-brow-glad.svg" style="width:14px;display:auto;" id="character-right-brow-glad">
+                                    </div>
+                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                        <img src="/src/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                                    </div>
+    
+                                </div>
+                            </div>   
+                        </div>                                      
+                        <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                            <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                        </div>
+                        <div id="right-arm-container">
+                            <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                        </div>
+                        <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                            <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>    
+                
+            <div class="intro-text">
+                <h3 style="color:#1E73BE;font-weight: bold;" class="title">在三个月内用互联网最有趣的方法记住10,000个单词!</h3>
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="character-mobile" style="position:relative;width:111px;height:160px;margin-bottom:80px;z-index: 2;margin-top:110px;">
+                        <div class="small-shadow" style="position:absolute; z-index: 2;">
+                            <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                        </div>
+                        <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-left-leg.svg" id="character-left-leg">
+                        </div>
+                        <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-right-leg.svg" id="character-right-leg">
+                        </div>
+                        <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                            <div class="head-container">
+                                <div class="neutral-face-container" style="display:block"> 
+                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                            <img src="/src/svg/character/hats/hat-32.svg" style="width: 70px;">
+                                        </div>
+                                    </div> 
+                                    <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                    <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                        <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                    </div>
+                                    <div style="position: absolute; top:18px;right:23px;">
+                                        <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                    </div>
+                                    <div style="position: absolute; top:13px;left:15px;">
+                                        <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                    </div>
+                                    <div style="position: absolute; top:13px;right:17px;">
+                                        <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                    </div>
+                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                        <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                    </div>
+    
+                                </div>
+                                <div class="glad-face-container"> 
+                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                            <img src="/src/svg/character/hats/hat-32.svg" style="width: 70px;">
+                                        </div>
+                                    </div> 
+                                    <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                    <div style="position: absolute; top:17px;left:19px; width:20px;">
+                                        <img src="/src/svg/character/character-left-eye-glad.svg" style="width:14px;display:auto;" id="character-left-eye-glad">
+                                    </div>
+                                    <div style="position: absolute; top:18px;right:20px;">
+                                        <img src="/src/svg/character/character-right-eye-glad.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                                    </div>
+                                    <div style="position: absolute; top:9px;left:15px;">
+                                        <img src="/src/svg/character/character-left-brow-glad.svg" style="width:14px;display:auto;" id="character-left-brow-glad">
+                                    </div>
+                                    <div style="position: absolute; top:9px;right:17px;">
+                                        <img src="/src/svg/character/character-right-brow-glad.svg" style="width:14px;display:auto;" id="character-right-brow-glad">
+                                    </div>
+                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                        <img src="/src/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                                    </div>
+    
+                                </div>
+                            </div>   
+                        </div>                                      
+                        <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                            <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                        </div>
+                        <div id="right-arm-container">
+                            <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                        </div>
+                        <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                            <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                        </div>
+                    </div>
+                </div>
+                <p>通过我们的游戏化词汇学习方法，让您的托福和雅思考试取得好成绩。</p>
+                <div class="btn-blue small-shadow-button get-started-button-mods login-button">注册 / 登录 </div>
+            </div>
+        </div>
+        <div id="section2"></div>
+    </div>
+    <hr>
+    <div class="remaining-container" style="margin-top:50px;margin-bottom:50px;">
+        <div class="w-100 d-flex justify-content-center section-2-title">免费体验，高效成果，乐趣无限</div>
+        <div class="w-100 d-flex justify-content-center" style="width: 100px;">
+            <div style="width: 400px;">
+                <span>我们的词汇库里有高频出现的1万个单词，帮助你备考托福和雅思。还有倒计时、<span class="gold-text">复习功能</span>和<span class="gold-text">挑战模式</span>，让学习更有趣。而且，你还能用赚到的<span class="gold-text">金币</span>买帽子，给角色换新造型！赶紧来体验吧！</span>
+            </div>
+        </div>
+        
+        <div class="w-100 d-flex justify-content-center small-shadow">
+            <div style="max-width: 700px;background-color: #616161;margin-top:30px;">
+                <img src="/src/img/desktop.png" style="width: 100%;" id="desktop-photo">
+                <img src="/src/img/tablet.png" style="width: 100%;" id="tablet-photo">
+                <img src="/src/img/mobile.png" style="width: 100%;" id="mobile-photo">
+            </div>
+        </div>
+        <div id="section3"></div>
+    </div>
+    <hr>
+    <div class="remaining-container" style="margin-top:50px;margin-bottom:50px;">
+        <div class="w-100 d-flex justify-content-center section-2-title">订阅就能获得更多福利!
+        </div>
+        <div class="w-100 d-flex justify-content-center" style="width: 100px;">
+            <div style="width: 400px;">
+                <span>我们有两个套餐。课程设计在<span style="color:#CC9900;font-weight: bold;">2到4</span>个月内完成。高级计划让你访问所有闪卡集、等级和特别功能，学习效果更好</span>
+            </div>
+        </div>
+        <div class="w-100 mt-4 price-card-container">
+            <div class="buy-card free-card small-shadow me-3">
+                <div class="w-100 d-flex justify-content-center"><span class="card-title">免费版</span></div>
+                <div class="w-100 d-flex flex-column align-items-center mb-2">
+                    <span class="card-price">$0</span>
+                    <span class="per-month">每月</span>
+                </div>
+                <div style="padding:20px 20px 0px 20px;">
+                    <ul class="card-list-of-benefits">
+                        <li style="margin-bottom:7px;">从每个等级的三个免费卡组开始，探索我们的丰富内容</li>
+                        <li style="margin-bottom:7px;">广告呈现中</li>
+                        <li style="margin-bottom:7px;">复习模式和挑战模式暂时锁定</li>
+                    </ul>
+                </div>
+                <div class="btn-yellow-container">
+                    <div class="btn-yellow small-shadow-button buy-plan-button-mods login-button">开始学习</div></div>
+                
+            </div>
+            <div class="buy-card premium-card small-shadow me-3">
+                <div class="w-100 d-flex justify-content-center"><span class="card-title">付费版</span></div>
+                <div class="w-100 d-flex flex-column align-items-center mb-2">
+                    <span class="card-price">$19.99</span>
+                    <span class="per-month">每月</span>
+                </div>
+                <div style="padding:20px 20px 0px 20px;">
+                    <ul class="card-list-of-benefits">
+                        <li style="margin-bottom:7px;">全面解锁所有等级的单词卡组</li>
+                        <li style="margin-bottom:7px;">无广告干扰</li>
+                        <li style="margin-bottom:7px;">使用复习模式和挑战模式，提升学习效果</li>
+                        <li style="margin-bottom:7px;">随时取消</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="btn-yellow-container">
+                    <div class="btn-yellow small-shadow-button buy-plan-button-mods login-button">购买套餐</div>
+                </div>
+            </div>
+        </div>
+        <div id="section4"></div>
+    </div>
+    <hr>
+    <div class="remaining-container d-flex flex-column justify-content-center align-items-center" style="margin-top:40px;">
+        <div class="w-100 d-flex justify-content-center section-2-title"><div class="w-100 d-flex justify-content-center section-2-title">常见问题</div></div>
+        <div class="accordion accordion-flush small-shadow accordion-custom-widths" id="accordionExample" style="margin-bottom:20px;border-top:1px solid #DFDFDF;">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    词汇级别涵盖哪些内容？这些级别是如何设置的？
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    不同级别的词汇从简单到复杂逐步提升，通常从基础词汇开始，比如一级涵盖简单的日常用词和基础句型。随着级别的增加，词汇的难度和复杂性也逐步提高。通常在高级别（例如二十级）会涉及学术、专业领域的词汇或复杂的句式结构。这种结构帮助学习者按部就班地掌握词汇，确保基础扎实，同时不断提升词汇量。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    闪卡系统怎么运作的啊？
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    每个级别都有不同的单词集，一级是最简单的，二十级是最难的。用户必须每个单词集至少完成三次才能升级到金牌状态。复习模式可以让用户复习已经开始的单词集。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    如何追踪用户的进度和表现？
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    我们的网站提供一个倒计时小工具，可以让你看到距离考试还有多少天、小时、分钟和秒！我们还设计了很多进度条和有趣的颜色，轻松显示你距离完成在线课程还有多远。
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    我可以在哪里访问这个网站？
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    只要有 WiFi 或数据网络，你随时随地都能使用！我们也在开发手机应用，敬请期待！
+                  </div>
+                </div>
+              </div>
+              
+              
+        </div>
+          <div class="w-100 d-flex justify-content-center"><span id="more-questions-button">还有其他问题吗？联系我们！</span></div>
+    </div>
+    <hr>
+    <div class="remaining-container d-flex justify-content-center align-items-center flex-column" style="margin-bottom:40px;">
+        <h3 style="color:#616161; padding:15px;font-weight: bold;">你还在等什么？让我们开始学习吧！</h3>
+        <a class="nav-link navbar-account-button link login-button"><div class="start-button p-2">开始学习</div></a>
+    </div>
+    <hr>
+    <div class="bg-white flex-column align-items-center p-2" id="footer-links" style="z-index: 1;display: flex;">
+        <div class="mb-2">
+            <a class="m-2 footer-links" href="about-us.html">公司简介</a>
+            <a class="m-2 footer-links" href="contact-us.html">联系我们</a>
+        </div>
+        <span>&copy; 2024, Memorwise. All Rights Reserved</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/public/js/home.bundle.js"></script>
+</body>
+</html>

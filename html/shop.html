@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/dist/css/style-dashboard.css" rel="stylesheet">
+    <link href="/dist/css/style-shop.css" rel="stylesheet">
+    <link href="/dist/css/global.css" rel="stylesheet">
+</head>
+<body>
+    <div class=" w-100 h-100 justify-content-center align-items-center" style="display: flex; z-index: 10000;" id="loading-screen">
+        
+        
+        <div>
+            <div class="d-flex">
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="upgrade-to-premium">
+        <span id="get-premium-notif">获取高级版以解锁所有功能并加速您的学习!</span>
+    </div>
+    <nav class="navbar navbar-expand navbar-mods" id="nav"  style="z-index: 8;">
+        <div class="container-fluid navbar-container">
+            <a class="navbar-brand nav-link brand" style="color:#1E73BE;font-weight: bold;">Memorwise</a>
+            <div class="navbar-nav d-flex justify-content-center align-items-center" style>
+                <a class="nav-link disabled">
+                    <div class="coin-container">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="/src/svg/coin.svg" class="coin-icon-style">
+                            <span class="coin-num" id="coin-num">0</span>
+                        </div>
+                        
+                    </div>
+                </a>
+                <a class="nav-link navbar-shop-button" id="navbar-shop-button"><img src="/src/svg/shop-button.svg" style="width: 40px;"></a>
+                <a class="nav-link navbar-account-button" id="navbar-account-button"><img src="/src/svg/account-button.svg" style="width: 42px; "></a>
+            </div>
+        </div>
+        <div style='opacity:0;' id="purchase-warning" class="purchase-warning small-shadow">
+        <div class="warning-label" id="warning-label">买这顶帽子吗？</div>     
+        <div class="d-flex justify-content-center">
+            <div class="cancel-button" id="cancel-button">取消</div>
+            <div class="purchase-button" id="purchase-button">是的</div>
+        </div>
+    </div>
+    </nav>
+     
+    <a href="dashboard.html" id="back-button" style="text-decoration: none;"><button  class=" light-grey small-shadow button-mods">返回首页</button></a> 
+    <div class="content-container" id="content-container">
+        <h1 class="title">商店</h1>
+        <div style="z-index: 2;position: relative;width: 100%;background-color: #1E73BE;margin-bottom: 60px;">
+            <div class="w-100 justify-content-center" id="mobile-tablet-character">
+                <div class="character" id="character" style="position:absolute;width:111px;height:160px;margin-bottom:80px;">
+                    <div class="small-shadow" style="position:absolute; z-index: 2;">
+                        <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                    </div>
+                    <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                        <img src="/src/svg/character/character-left-leg.svg" id="character-left-leg">
+                    </div>
+                    <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                        <img src="/src/svg/character/character-right-leg.svg" id="character-right-leg">
+                    </div>
+                    <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                        <div class="head-container d-flex justify-content-center flex-column">
+                            
+                            <div id="neutral-face-container" style="display:block">
+                                <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                    <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                    </div>
+                                </div> 
+                                <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                    <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                </div>
+                                <div style="position: absolute; top:18px;right:23px;">
+                                    <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                </div>
+                                <div style="position: absolute; top:13px;left:15px;">
+                                    <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                </div>
+                                <div style="position: absolute; top:13px;right:17px;">
+                                    <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                </div>
+                                <div style="position: absolute; bottom:14px;right:20px;">
+                                    <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                </div>
+                                
+                            </div>
+                            
+        
+                        </div>   
+                    </div>                                      
+                    <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                        <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="display:none;width:44px;" id="character-left-arm">
+                    </div>
+                    <div id="right-arm-container">
+                        <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="display:none;width:44px;" id="character-right-arm">
+                    </div>
+                    <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                        <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="position: relative;margin-bottom:0; z-index: 4;">
+            <div class="module small-shadow character-module d-flex" style="padding-left: 0; height:380px;z-index: 2;margin-bottom:20px;">   
+                <div class="character-container-shop">
+                    <div class="character" id="character" style="position:relative;width:111px;height:160px;margin-bottom:60px;z-index: 2;">
+                        <div class="small-shadow" style="position:absolute; z-index: 2;">
+                            <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                        </div>
+                        <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-left-leg.svg" id="character-left-leg">
+                        </div>
+                        <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                            <img src="/src/svg/character/character-right-leg.svg" id="character-right-leg">
+                        </div>
+                        <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                            <div class="head-container d-flex justify-content-center flex-column">
+                                
+                                <div id="neutral-face-container" style="display:block">
+                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                            
+                                        </div>
+                                    </div> 
+                                    <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                    <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                        <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                    </div>
+                                    <div style="position: absolute; top:18px;right:23px;">
+                                        <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                    </div>
+                                    <div style="position: absolute; top:13px;left:15px;">
+                                        <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                    </div>
+                                    <div style="position: absolute; top:13px;right:17px;">
+                                        <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                    </div>
+                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                        <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                    </div>
+                                    
+                                </div>
+                                
+    
+                            </div>   
+                        </div>                                      
+                        <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                            <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                        </div>
+                        <div id="right-arm-container">
+                            <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                        </div>
+                        <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                            <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hat-container-shop" id="hat-container-shop" style="z-index: 1;">
+                    <div class="schedule-card-grid">
+                        <div id="grid-shop">
+                            
+
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+        </div>  
+        <div style="height:20px"></div>
+    </div>
+    <!-- <div style='opacity:0;' id="purchase-warning" class="purchase-warning small-shadow">
+        <div class="warning-label">Purchase this hat?</div>     
+        <div class="d-flex justify-content-center">
+            <div class="cancel-button" id="cancel-button">Cancel</div>
+            <div class="purchase-button" id="purchase-button">Buy</div>
+        </div>
+    </div> -->
+    <div class="bg-white flex-column align-items-center p-2" id="footer-links" style="z-index: 1;display: flex;">
+        <div class="mb-2">
+            <a class="m-2 footer-links" href="about-us.html">公司简介</a>
+            <a class="m-2 footer-links" href="contact-us.html">联系我们</a>
+        </div>
+        <span>&copy; 2024, Memorwise. All Rights Reserved</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/public/js/shop.bundle.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+</body>
+</html>

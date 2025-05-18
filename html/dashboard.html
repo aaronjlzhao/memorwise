@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/public/css/style-dashboard.css" rel="stylesheet">
+    <link href="/public/css/global.css" rel="stylesheet">
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7863294999883140"
+     crossorigin="anonymous"></script> -->
+    <title>Dashboard</title>
+</head>
+<body>
+    <div style="position: fixed; height:340px; width:111px; background-color: none;z-index: 10000;right:50px;bottom:-120px;opacity:0" id="mobile-tablet-character">
+        <div class="character-container" style="height:340px;">
+            <div style="position:relative;width:111px;height:160px;margin-bottom:80px;z-index: 2;">
+                <div class="small-shadow" style="position:absolute; z-index: 2;">
+                    <img src="/public/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                </div>
+                <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                    <img src="/public/svg/character/character-left-leg.svg" id="character-left-leg">
+                </div>
+                <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                    <img src="/public/svg/character/character-right-leg.svg" id="character-right-leg">
+                </div>
+                <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                    <div class="head-container">
+                        <div class="neutral-face-container" style="display:block"> 
+                            <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                    
+                                </div>
+                            </div> 
+                            <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                            <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                <img src="/public/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                            </div>
+                            <div style="position: absolute; top:18px;right:23px;">
+                                <img src="/public/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                            </div>
+                            <div style="position: absolute; top:13px;left:15px;">
+                                <img src="/public/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                            </div>
+                            <div style="position: absolute; top:13px;right:17px;">
+                                <img src="/public/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                            </div>
+                            <div style="position: absolute; bottom:14px;right:20px;">
+                                <img src="/public/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                            </div>
+
+                        </div>
+                        <div class="glad-face-container" style="display:none;"> 
+                            <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                    
+                                </div>
+                            </div> 
+                            <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                            <div style="position: absolute; top:17px;left:19px; width:20px;">
+                                <img src="/public/svg/character/character-left-eye-glad.svg" style="width:14px;display:auto;" id="character-left-eye-glad">
+                            </div>
+                            <div style="position: absolute; top:18px;right:20px;">
+                                <img src="/public/svg/character/character-right-eye-glad.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                            </div>
+                            <div style="position: absolute; top:9px;left:15px;">
+                                <img src="/public/svg/character/character-left-brow-glad.svg" style="width:14px;display:auto;" id="character-left-brow-glad">
+                            </div>
+                            <div style="position: absolute; top:9px;right:17px;">
+                                <img src="/public/svg/character/character-right-brow-glad.svg" style="width:14px;display:auto;" id="character-right-brow-glad">
+                            </div>
+                            <div style="position: absolute; bottom:14px;right:20px;">
+                                <img src="/public/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                            </div>
+
+                        </div>
+                    </div>   
+                </div>                                      
+                <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                    <img src="/public/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                </div>
+                <div id="right-arm-container">
+                    <img src="/public/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                </div>
+                <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                    <img src="/public/svg/character/character-shadow.svg" style="width: 150px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" w-100 h-100 justify-content-center align-items-center" style=" display:flex; z-index: 12;" id="loading-screen">    
+        <div>
+            <div class="d-flex">
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="z-index: 2;" id="everything">
+        <div id="upgrade-to-premium">
+            <span id="get-premium-notif">点击此处购买高级版本以解锁更多功能!</span>
+        </div>
+        <nav class="navbar navbar-expand navbar-mods" id="nav"  style="z-index: 8;">
+            <div class="container-fluid navbar-container">
+              <a class="navbar-brand nav-link brand" style="color:#1E73BE;font-weight: bold;">Memorwise</a>
+                <div class="navbar-nav d-flex justify-content-center align-items-center" style>
+                    <a class="nav-link disabled">
+                        <div class="coin-container">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="/public/svg/coin.svg" class="coin-icon-style">
+                                <span class="coin-num" id="coin-num">0</span>
+                            </div>
+                            
+                        </div>
+                    </a>
+                    <a class="nav-link navbar-shop-button" id="navbar-shop-button"><img src="/public/svg/shop-button.svg" style="width: 40px;"></a>
+                    <a class="nav-link navbar-account-button" id="navbar-account-button"><img src="/public/svg/account-button.svg" style="width: 42px; "></a>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="d-flex justify-content-center"> -->
+        <div class="setup-widget" id="setup-widget"  style="z-index: 10; display:none;">
+            <div id="q1" style="display:none; ">
+                    <div class="d-flex justify-content-center mb-3">
+                        <h3 style="color: #1E73BE">你是学生还是老师？</h3>
+                    </div>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="btn me-3 setup-button-mods" id="english">老师</div>
+                        <div class="btn me-3 setup-button-mods" id="chinese">学生</div>
+                    </div>
+                    <div class="d-flex justify-content-center" style="color: gray; text-decoration: underline #717171;">
+                        <div class="continue-setup-button">继续</div>
+                    </div>
+            </div>
+            <div id="q2" style="display:none;">
+                <div class="d-flex justify-content-center mb-3">
+                    <h3 style="color: #1E73BE">您参加哪项考试？</h3>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="btn me-3 setup-button-mods" id="toefl">TOEFL</div>
+                    <div class="btn me-3 setup-button-mods" id="ielts">IELTS</div>
+                    <div class="btn me-3 setup-button-mods" id="ssat">SSAT</div>
+                    <div class="btn setup-button-mods" id="none">None</div>
+                </div>
+                <div class="d-flex justify-content-center" style="color: gray; text-decoration: underline #717171;">
+                    <div class="continue-setup-button">继续</div>
+                </div>
+            </div>
+            <div id="q3" style="display:none;">
+                <div class="d-flex justify-content-center mb-3">
+                    <h3 style="color: #1E73BE">你什么时候考试?</h3>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class="calendar small-shadow setup-calendar" id="setup-calendar" type="date" id="exam-date" name="exam-date" value="2025-01-01" min="2024-01-01" max="2028-12-31" />
+                </div>
+                
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <span class="skip-text" style="color:#717171">如果您不确定，请跳过。您也可以在注册后随时更改此日期。</span>
+                </div>
+                <div class="d-flex justify-content-center  mt-4" style="color: gray; text-decoration: underline #717171;">
+                    <div class="continue-setup-button">继续</div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        
+        <div class="widget-container-mobile" id="widget-container-mobile"  style="z-index: 7;">
+            <div class="light-grey back-button-widget" id="back-button-widget"><span style="text-wrap: nowrap;">返回首页</span></div> 
+            <div class="module-container">
+                <div class="small-shadow module timer-module d-rel">
+                    <div style="position: absolute;top:10px;right:10px;">
+                        <img src="/public/svg/settings-button.svg" style="width:15px;" id="settings-button">
+                        <img src="/public/svg/close-button.svg" style="width:15px;" id="settings-close-button">
+                    </div>
+                    <div class="">
+                        <h4 class="module-title">完成时间:</h4>
+                        <div class="row timer-countdown-row" id = "timer-countdown-row">
+                            
+                            <div class="col d-flex justify-content-center">
+                                <div class="counter">
+                                    <span class="timer-counter-value" id="day-counter">0</span>
+                                    <p>天</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <div class="counter">
+                                    <span class="timer-counter-value" id="hour-counter">0</span>
+                                    <p>小时</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <div class="counter">
+                                    <span class="timer-counter-value" id="min-counter">0</span>
+                                    <p>分钟</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <div class="counter">
+                                    <span class="timer-counter-value" id="sec-counter">0</span>
+                                    <p>秒</p>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="d-flex justify-content-center" style="display:none;">
+                            <input id="timer-module-date-2" class="calendar dashboard-calendar small-shadow mt-1 mb-3" type="date" id="exam-date" name="exam-date" value="2025-01-01" min="2024-01-01" max="2028-12-31" />
+                        </div>
+                    </div>
+                        
+                    <div class="btn big-button view-full-course-button">查看完整课程<span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                    <a id="save-date"><div class="btn big-button" style="color:#1E73BE; background-color:#D9D9D9; display: none;" id="save-date-text">保存新日期</div></a>
+                </div>
+                <div class="small-shadow module advertisement-module" style="padding-bottom: 10px;"> 
+                    <div class="">
+                        <div style="background-color: #EEEEEE; height: 200px; margin-bottom:11px;color:#616161" class="d-flex justify-content-center align-items-center">
+                            <div class="spinner-border text-secondary d-none" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            <div class="advertisement-text">广告</div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex justify-content-center pb-3 prem-link">购买高级版去广告.</div>
+                </div>
+                <div class="small-shadow module review-module"> 
+                    <h4 class="module-title">完成的课程数:</h4>
+                    <h4 style="color:#1E73BE;font-weight: 700;" class="lc-fraction"><span id="lessons-completed">0</span>/<span class="total-lessons">0</span></h4>
+                    <div class="btn big-button margin-top review-button" style="color:#616161;">复习<span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                </div>
+                <div class="module small-shadow character-module">
+                    <div class="character-container" style="height:340px;">
+                        <div style="position:relative;width:111px;height:160px;margin-bottom:80px;z-index: 2;">
+                            <div class="small-shadow" style="position:absolute; z-index: 2;">
+                                <img src="/public/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                            </div>
+                            <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                                <img src="/public/svg/character/character-left-leg.svg" id="character-left-leg">
+                            </div>
+                            <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                                <img src="/public/svg/character/character-right-leg.svg" id="character-right-leg">
+                            </div>
+                            <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                                <div class="head-container">
+                                    <div class="neutral-face-container" style="display:block"> 
+                                        <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                            <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                
+                                            </div>
+                                        </div> 
+                                        <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                        <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                            <img src="/public/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                        </div>
+                                        <div style="position: absolute; top:18px;right:23px;">
+                                            <img src="/public/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                        </div>
+                                        <div style="position: absolute; top:13px;left:15px;">
+                                            <img src="/public/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                        </div>
+                                        <div style="position: absolute; top:13px;right:17px;">
+                                            <img src="/public/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                        </div>
+                                        <div style="position: absolute; bottom:14px;right:20px;">
+                                            <img src="/public/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                        </div>
+
+                                    </div>
+                                    <div class="glad-face-container" style="display:none;"> 
+                                        <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                        <div style="position: absolute; top:17px;left:19px; width:20px;">
+                                            <img src="/public/svg/character/character-left-eye-glad.svg" style="width:14px;display:auto;" id="character-left-eye-glad">
+                                        </div>
+                                        <div style="position: absolute; top:18px;right:20px;">
+                                            <img src="/public/svg/character/character-right-eye-glad.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                                        </div>
+                                        <div style="position: absolute; top:9px;left:15px;">
+                                            <img src="/public/svg/character/character-left-brow-glad.svg" style="width:14px;display:auto;" id="character-left-brow-glad">
+                                        </div>
+                                        <div style="position: absolute; top:9px;right:17px;">
+                                            <img src="/public/svg/character/character-right-brow-glad.svg" style="width:14px;display:auto;" id="character-right-brow-glad">
+                                        </div>
+                                        <div style="position: absolute; bottom:14px;right:20px;">
+                                            <img src="/public/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                                        </div>
+
+                                    </div>
+                                </div>   
+                            </div>                                      
+                            <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                                <img src="/public/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                            </div>
+                            <div id="right-arm-container">
+                                <img src="/public/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                            </div>
+                            <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                                <img src="/public/svg/character/character-shadow.svg" style="width: 150px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-container">
+                        <button class="btn-grey shop-button">商店</button>
+                    </div>
+                </div>  
+                <div class="small-shadow module leaderboard-module-mobile">
+                    <h4 class="module-title">排行榜:</h4>
+                    <div class="leaderboard-list-container-mobile" id="leaderboard-list-container">
+                        
+                    </div>     
+                    <div class="user-standing-container gray">
+                        <div class="player-container">
+                            <span id="user-standing">#</span>
+                            <span id="user-username">username</span>
+                            <span id="user-score">25</sp>
+                        </div>
+                    </div>
+                    <div class="btn big-button challenge-button">开始挑战 <span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                </div>
+                <div class="module small-shadow weekly-challenges-module">
+                    <h4 class="module-title">每周挑战:</h4>
+                    <div class="weekly-challenges-module-content">
+                        <div class="progress-bees">
+                            <p class="challenge">完成 21 节课</p>
+                            <div class="progress progress-bar-challenges-mods small-shadow">
+                                <div 
+                                    class="progress-bar shimmer" 
+                                    id="progressLength1"
+                                    role="progressbar" 
+                                    style="width: 50%; background-color: #1E73BE !important;">
+                                    <span id="weekly-challenge-1">0</span>
+                                </div>
+                            </div>
+                            <p class="challenge">复习 10 次</p>
+                            <div class="progress progress-bar-challenges-mods small-shadow">
+                                <div 
+                                    class="progress-bar shimmer" 
+                                    id="progressLength2"
+                                    role="progressbar" 
+                                    style="width: 90%; background-color: #1E73BE !important;">
+                                    <span id="weekly-challenge-2">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="weekly-challenges-timer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="background" id="background"  style="z-index: 7;">
+                
+                <div class="dashboard">                    
+                    <div class="side-column left-column">
+                        <div class="module-container">
+                            <div class="small-shadow module timer-module d-rel">
+                                <div style="position: absolute;top:10px;right:10px;">
+                                    <img src="/public/svg/settings-button.svg" style="width:15px;" id="settings-button">
+                                    <img src="/public/svg/close-button.svg" style="width:15px;" id="settings-close-button">
+                                </div>
+                                <div class="">
+                                    <h4 class="module-title">完成时间:</h4>
+                                    <div class="row timer-countdown-row" id = "timer-countdown-row">
+                                        
+                                        <div class="col d-flex justify-content-center">
+                                            <div class="counter">
+                                                <span class="timer-counter-value" id="day-counter">0</span>
+                                                <p>天</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <div class="counter">
+                                                <span class="timer-counter-value" id="hour-counter">0</span>
+                                                <p>小时</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <div class="counter">
+                                                <span class="timer-counter-value" id="min-counter">0</span>
+                                                <p>分钟</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <div class="counter">
+                                                <span class="timer-counter-value" id="sec-counter">0</span>
+                                                <p>秒</p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <input id="timer-module-date-1" class="calendar dashboard-calendar small-shadow mt-1 mb-3" type="date" id="exam-date" name="exam-date" value="2025-01-01" min="2024-01-01" max="2028-12-31" />
+                                    </div>
+                                </div>
+                                    
+                               <div class="btn big-button view-full-course-button">查看完整课程<span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                                <a id="save-date"><div class="btn big-button" id="save-date-text" style="color:#1E73BE">保存新日期</div></a>
+                            </div>
+                            <div class="small-shadow module review-module"> 
+                                <h4 class="module-title">完成的课程数:</h4>
+                                <h4 style="color:#1E73BE;font-weight: 700;" class="lc-fraction"><span id="lessons-completed">0</span>/<span class="total-lessons">1338</span></h4>
+                                <a href="lesson.html"><div class="btn big-button margin-top d-none">Review Definitions</div></a>
+                                <a href="lesson.html"><div class="btn big-button margin-top d-none">Review Synonyms</div></a>
+                                <div class="btn big-button margin-top review-button" style="color:#616161;">复习<span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                            </div>
+                            <div class="small-shadow module advertisement-module" style="padding-bottom: 2px;"> 
+                                <div>
+                                    <div style="background-color: #EEEEEE; height: 400px; margin-bottom:11px; display:flex;justify-content: center;align-items: center;">
+                                        <div class="spinner-border text-secondary d-none" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                        <div class="advertisement-text">广告</div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex justify-content-center pb-3 prem-link">购买高级版去广告.</div>
+                            </div>
+                            <div class="module small-shadow weekly-challenges-module">
+                                <h4 class="module-title">每周挑战:</h4>
+                                <div class="weekly-challenges-module-content">
+                                    <div class="progress-bees">
+                                        <p class="challenge">完成 21 节课</p>
+                                        <div class="progress progress-bar-challenges-mods small-shadow">
+                                            <div 
+                                                class="progress-bar shimmer" 
+                                                id="progressLength1"
+                                                role="progressbar" 
+                                                style="background-color: #1E73BE !important;">
+                                                <span id="weekly-challenge-1">0</span>
+                                            </div>
+                                        </div>
+                                        <p class="challenge">复习 10 次</p>
+                                        <div class="progress progress-bar-challenges-mods small-shadow">
+                                            <div 
+                                                class="progress-bar shimmer" 
+                                                id="progressLength2"
+                                                role="progressbar" 
+                                                style="background-color: #1E73BE !important;">
+                                                <span id="weekly-challenge-2">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="weekly-challenges-timer">
+
+                                </div>
+                            </div>
+                            <div class="small-shadow module leaderboard-module-mobile">
+                                <h4 class="module-title">排行榜:</h4>
+                                <div class="leaderboard-list-container" id="leaderboard-list-container">
+                                    
+                                </div>     
+                                <div class="user-standing-container gray">
+                                    <div class="player-container">
+                                        <span id="user-standing">#</span>
+                                        <span id="user-username">username</span>
+                                        <span id="user-score">25</sp>
+                                    </div>
+                                </div>
+                                <div class="btn big-button challenge-button">开始挑战 <span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                            </div>
+                        </div>                         
+                    </div>                                            
+                    <div class="selector-and-carousel-container">
+                        <div class="justify-content-center align-items-center advertisement-module small-shadow" style="width: 100%; height:120px; background-color: #EEEEEE;margin-top:20px;"> 
+                            <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                                <div class="spinner-border text-secondary d-none" role="status">
+                                    <span class="sr-only"></span>
+                                </div>
+                                <div class="advertisement-text">广告</div>
+                            </div>
+                        </div>
+                        <div class="progress progress-bar-mods small-shadow">
+                            <div 
+                                class="progress-bar shimmer" 
+                                role="progressbar" 
+                                style="width: 0%;"
+                                id="progressBarWidth">
+                            </div>    
+                        </div>
+                        <div class="level-selector">
+                            <div class=" justify-content-center" style="width:200px;position:relative;">
+                                <button id='xy' style="position:absolute;left:0;top:-3px;border:none; background-color: white;" type="submit" data-bs-target="#carouselExampleControls" data-bs-slide="prev"><img src="/public/svg/previous-level-button.svg" class="previous-button" id="prev"></button>
+                                <div class="d-flex justify-content-center">
+                                    <h4 class="level-display">等级 <span id="deck-level-num-selector">1</span></h4>
+                                </div>
+                                <button id='yz' style="position:absolute;right:0;top:-3px;border:none; background-color: white; " type="submit" data-bs-target="#carouselExampleControls" data-bs-slide="next"><img src="/public/svg/next-level-button.svg" class="next-button" id="next"></button>
+                            </div>                           
+                        </div>                       
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false" >
+                            <div class="p-relative">                                
+                                
+                                <img src="/public/svg/learn-button.svg" class="learn-button" id="learn-button" style="position:absolute;top:-63px;right:20px;" >
+                                
+                                <a id="widget-button">
+                                    <img src="/public/svg/widget-button.svg" class="widget-button" style="position:absolute;top:-63px;left:20px;">
+                                </a>
+
+
+
+
+
+                                <div class="carousel-inner p-relative" id="carousel-pages">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>      
+                    </div>
+                    <div class="side-column right-column">
+                        <div class="module-container">
+                            <div class="module small-shadow character-module">
+                                <div class="character-container" style="height:340px;">
+                                    <div style="position:relative;width:111px;height:160px;margin-bottom:80px;z-index: 2;">
+                                        <div class="small-shadow" style="position:absolute; z-index: 2;">
+                                            <img src="/public/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                                        </div>
+                                        <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                                            <img src="/public/svg/character/character-left-leg.svg" id="character-left-leg">
+                                        </div>
+                                        <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                                            <img src="/public/svg/character/character-right-leg.svg" id="character-right-leg">
+                                        </div>
+                                        <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                                            <div class="head-container">
+                                                <div class="neutral-face-container" style="display:block"> 
+                                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                            
+                                                        </div>
+                                                    </div> 
+                                                    <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                                    <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                                        <img src="/public/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                                    </div>
+                                                    <div style="position: absolute; top:18px;right:23px;">
+                                                        <img src="/public/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                                    </div>
+                                                    <div style="position: absolute; top:13px;left:15px;">
+                                                        <img src="/public/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                                    </div>
+                                                    <div style="position: absolute; top:13px;right:17px;">
+                                                        <img src="/public/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                                    </div>
+                                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                                        <img src="/public/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                                    </div>
+
+                                                </div>
+                                                <div class="glad-face-container" > 
+                                                    <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                                        <div class=" w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                                        </div>
+                                                    </div>
+                                                    <img src="/public/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                                    <div style="position: absolute; top:17px;left:19px; width:20px;">
+                                                        <img src="/public/svg/character/character-left-eye-glad.svg" style="width:14px;display:auto;" id="character-left-eye-glad">
+                                                    </div>
+                                                    <div style="position: absolute; top:18px;right:20px;">
+                                                        <img src="/public/svg/character/character-right-eye-glad.svg" style="width:14px;z-index: 400;display:auto;" id="character-right-eye-glad">
+                                                    </div>
+                                                    <div style="position: absolute; top:9px;left:15px;">
+                                                        <img src="/public/svg/character/character-left-brow-glad.svg" style="width:14px;display:auto;" id="character-left-brow-glad">
+                                                    </div>
+                                                    <div style="position: absolute; top:9px;right:17px;">
+                                                        <img src="/public/svg/character/character-right-brow-glad.svg" style="width:14px;display:auto;" id="character-right-brow-glad">
+                                                    </div>
+                                                    <div style="position: absolute; bottom:14px;right:20px;">
+                                                        <img src="/public/svg/character/character-mouth-glad.svg" style="width:40px;display:auto;" id="character-mouth-glad">
+                                                    </div>
+
+                                                </div>
+                                            </div>   
+                                        </div>                                      
+                                        <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                                            <img src="/public/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                                        </div>
+                                        <div id="right-arm-container">
+                                            <img src="/public/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                                        </div>
+                                        <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                                            <img src="/public/svg/character/character-shadow.svg" style="width: 150px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-container">
+                                    <button class="btn-grey shop-button" >商店</button>
+                                </div>
+                            </div>
+                            <div class="small-shadow module advertisement-module" style="padding-bottom: 1px;"> 
+                                <div>
+                                    <div style="background-color: #EEEEEE; height: 200px; margin-bottom:11px;display:flex;justify-content: center;align-items: center;color:#616161;">
+                                        <div class="spinner-border text-secondary d-none" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                        <div class="advertisement-text">广告</div>
+                                    </div>
+                                </div>
+                                <div class="w-100 d-flex justify-content-center pb-3 prem-link">购买高级版去广告.</div>
+                            </div>                           
+                            <div class="small-shadow module leaderboard-module">
+                                <h4 class="module-title">排行榜:</h4>
+                                <div class="leaderboard-list-container" id ="leaderboard-list-container">
+                                    <div class="spinner-border" role="status" id="spinner">
+                                        <span class="p-absolute visually-hidden">Loading...</span>
+                                    </div>
+
+
+                                </div>     
+                                <div class="user-standing-container gray">
+                                    <div class="player-container">
+                                        <span id="user-standing">0</span>
+                                        <span id="user-username"></span>
+                                        <span id="user-score">0</sp>
+                                    </div>
+                                </div>
+                                <div class="btn big-button challenge-button">开始挑战 <span class="prem-module-lock"><img src="/public/svg/lock.svg" style="height:20px;margin-bottom:4px;"></span></div>
+                            </div>
+                        </div>                      
+                    </div>   
+                </div>
+        </div>
+    </div>
+    <div class="bg-white flex-column align-items-center p-2" id="footer-links" style="z-index: 1;display: flex;">
+        <div class="mb-2">
+            <a class="m-2 footer-links" href="about-us.html">公司简介</a>
+            <a class="m-2 footer-links" href="contact-us.html">联系我们</a>
+        </div>
+        <span>&copy; 2024, Memorwise. All Rights Reserved</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/public/js/dashboard.bundle.js" type="module"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        const premiumNotif = document.getElementById('upgrade-to-premium');
+        
+            premiumNotif.addEventListener("click", function(){
+                    window.location.href='subscription.html';
+            })
+        const premLink = document.querySelectorAll('.prem-link');
+            console.log(premLink);
+            premLink.forEach(link=>{
+                link.addEventListener('click', function(){
+                window.location.href='subscription.html';
+                })
+            })
+        })
+    </script>
+</body>
+</html>

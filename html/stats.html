@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/public/css/style-stats.css" rel="stylesheet">
+    <link href="/public/css/global.css" rel="stylesheet">
+    <title>Stats</title>
+</head>
+<body>
+    <div class=" w-100 h-100 justify-content-center align-items-center" style=" display:flex; z-index: 12;" id="loading-screen">
+        
+        
+        <div>
+            <div class="d-flex">
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="everything">
+        <div id="upgrade-to-premium">
+            <span id="get-premium-notif">获取高级版以解锁所有功能并加速您的学习!</span>
+        </div>
+        <nav class="navbar navbar-expand navbar-mods" id="nav" style="position: relative;">
+            
+            <div class="container-fluid navbar-container" style="position: relative;">
+                <div id='settings-button' class="small-shadow d-flex justify-content-center align-items-center">
+
+                        <img src="/src/svg/icons/settings-icon.svg" style="width: 32px;">
+                </div>
+                <div id="settings-menu" class="small-shadow" style="display:none;">
+                    <div class="d-rel">
+                        <div class="settings-menu-item top-border" id="logout-button" style="border-bottom:1px solid #898989">
+                                注销
+                        </div>
+                        <div class="settings-menu-item bottom-border" id="cancel-subscription-button">
+                            取消订阅
+                        </div>
+                    </div>
+                </div>
+              <a class="navbar-brand nav-link brand" style="color:#1E73BE;font-weight: bold;">Memorwise</a>
+                <div class="navbar-nav d-flex justify-content-center align-items-center" style>
+                    <a class="nav-link disabled">
+                        <div class="coin-container">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="/src/svg/coin.svg" class="coin-icon-style">
+                                <span class="coin-num" id="coin-num">0</span>
+                            </div>
+                            
+                        </div>
+                    </a>
+                    <a class="nav-link navbar-shop-button" id="navbar-shop-button" onclick="goToShop()"><img src="/src/svg/shop-button.svg" style="width: 40px;"></a>
+                    <a class="nav-link navbar-account-button" id="navbar-account-button" onclick="goToAccount()"><img src="/src/svg/account-button.svg" style="width: 42px; "></a>
+                </div>
+            </div>
+        </nav>
+    
+        <a href="dashboard.html"><button class=" light-grey small-shadow button-mods">返回首页</button></a>    
+        <div class="content-container">
+            
+            <h1 class="title">我的主页</h1>
+            <div class="character-and-progressbars">
+    
+                <div class="character-container">
+                     
+                    <div class="small-shadow" style="position:absolute; z-index: 2;">
+                        <img src="/src/svg/character/character-body.svg" style="height:150px;" class="character-body">
+                    </div>
+                    <div class="small-shadow" style="position:absolute;bottom:-40px;left:20px;z-index: 1;" class="small-shadow">
+                        <img src="/src/svg/character/character-left-leg.svg" id="character-left-leg">
+                    </div>
+                    <div style="position:absolute;bottom:-40px;right:20px;z-index: 1;" class="small-shadow">
+                        <img src="/src/svg/character/character-right-leg.svg" id="character-right-leg">
+                    </div>
+                    <div style="position:absolute;top:-40px;left:18px;z-index: 500;">
+                        <div class="head-container">
+                            <div style="position: absolute;top:-65px;left:-35px;z-index: 1000;width: 150px;height: 80px;" class="">
+                                <div class="w-100 h-100 d-flex justify-content-center align-items-center user-hat" style="opacity:1">
+                                    
+                                </div>
+                            </div>
+                            <div id="neutral-face-container" style="display:block"> 
+                                <img src="/src/svg/character/character-head.svg" class="small-shadow" style="width: 80px;" id="character-head">
+                                <div style="position: absolute; top:17px;left:23px; width:20px;">
+                                    <img src="/src/svg/character/character-left-eye.svg" style="width:7px;display:auto;" id="character-left-eye">
+                                </div>
+                                <div style="position: absolute; top:18px;right:23px;">
+                                    <img src="/src/svg/character/character-right-eye.svg" style="width:5px;z-index: 400;display:auto;" id="character-right-eye">
+                                </div>
+                                <div style="position: absolute; top:13px;left:15px;">
+                                    <img src="/src/svg/character/character-left-brow.svg" style="width:20px;display:auto;" id="character-left-brow">
+                                </div>
+                                <div style="position: absolute; top:13px;right:17px;">
+                                    <img src="/src/svg/character/character-right-brow.svg" style="width:20px;display:auto;" id="character-right-brow">
+                                </div>
+                                <div style="position: absolute; bottom:14px;right:20px;">
+                                    <img src="/src/svg/character/character-mouth.svg" style="width:40px;display:auto;" id="character-mouth">
+                                </div>
+    
+                            </div>
+                            
+    
+                        </div>   
+                    </div>                                      
+                    <div style="position:absolute;top:55px;left:-19px;z-index: 100000;">
+                        <img src="/src/svg/character/character-left-arm.svg" class="small-shadow" style="width:44px;" id="character-left-arm">
+                    </div>
+                    <div style="position:absolute;top:55px;left: 90px;z-index: 100000;" id="right-arm-container">
+                        <img src="/src/svg/character/character-right-arm.svg" class="small-shadow" style="width:44px;" id="character-right-arm">
+                    </div>
+                    <div style="position:absolute;bottom:-50px;left:-21px;z-index: 0;">
+                        <img src="/src/svg/character/character-shadow.svg" style="width: 150px;">
+                    </div>
+                </div>
+                <div class="progress-bars">
+    
+                    <div>
+                        <h3>课程总进度</h3>
+                        <div class="progress progress-bar-mods small-shadow">
+                            <div 
+                                class="progress-bar" 
+                                role="progressbar" 
+                                style="width: 0%;background-color:#1E73BE !important;"
+                                id="tcp">
+                                
+                            </div>
+                          </div>
+                    </div>
+                    <div>
+                        <h3>帽子收集进度</h3>
+                        <div class="progress progress-bar-mods small-shadow">
+                            <div 
+                                class="progress-bar" 
+                                role="progressbar" 
+                                style="width: 0%; background-color:#1E73BE !important;"
+                                id="hp">
+                            </div>
+                          </div>
+                    </div>
+                    <div>
+                        <h3>准确率</h3>
+                        <div class="progress progress-bar-mods small-shadow">
+                            <div 
+                                class="progress-bar" 
+                                role="progressbar" 
+                                style="width: 0%; background-color:#1E73BE !important;"
+                                id="ar">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="stats-num-grid">
+                <div class="row row-add-margin-bottom">
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>完成的级别数</p>
+                        <h4 class="blue"><span id="levels-completed"></span>/20</h4>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>完成的课程数</p>
+                        <h4 class="blue" id="lessons-completed">0</h4>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>完成的问题数</p>
+                        <h4 class="blue" id="questions-completed">0</h4>
+                    </div>
+                </div>
+                <div class="row row-add-margin-bottom">
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>正确答案</p>
+                        <h4 class="blue" id="correct-answers">0</h4>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>错误答案</p>
+                        <h4 class="blue" id="incorrect-answers">0</h4>
+                    </div>
+                    <div class="col d-flex flex-column align-items-center justify-content-center stat">
+                        <p>挑战尝试次数</p>
+                        <h4 class="blue" id="challenge-attempts">0</h4>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="w-100 d-flex justify-content-center" id="delete-account-link">删除帐户</div>
+        </div>
+        <div class="bg-white flex-column align-items-center p-2" id="footer-links" style="z-index: 1;display: flex;">
+            <div class="mb-2">
+                <a class="m-2 footer-links" href="about-us.html">公司简介</a>
+                <a class="m-2 footer-links" href="contact-us.html">联系我们</a>
+            </div>
+            <span>&copy; 2024, Memorwise. All Rights Reserved</span>
+        </div>
+    </div>
+    <div id="confirmation-page">
+        <div>
+            <div class="w-100 d-flex justify-content-center" id="cp-title" style="padding:30px;font-size:40px;color:#1E73BE;padding-top:40px;">您确定要取消订阅吗？</div>
+            <div class="w-100 d-flex justify-content-center" id="cp-description" style="padding:0px 30px 0px 30px;">取消订阅后，您将失去对我们数据库、挑战模式和审核模式的完全访问权限。</div>
+            <div class="d-flex" style="margin-top:40px;">
+                <div class=" w-100 d-flex justify-content-end" style="margin-right:20px;">
+                    <div id='cancel' class="d-flex justify-content-center">返回统计页面</div>
+                </div>
+                <div class=" w-100 d-flex justify-content-start">
+                    <div id="confirm">确认</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+    <script src="/public/js/stats.bundle.js" type="module"></script>
+</body>
+</html>
