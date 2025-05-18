@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/css/style-dashboard.css" rel="stylesheet">
+    <link href="/dist/css/global.css" rel="stylesheet">
+    <style>
+        h1,h4,p{
+            color:#616161;
+            margin:0;
+        }
+        .name{
+            color:#1E73BE;
+        }
+        .role{
+            margin-bottom:15px;
+        }
+        .biography{
+            margin-bottom:15px;
+        }
+    </style>
+    <title>Memorwise</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-mods" id="nav" style="z-index: 1000;">
+        <div class="container-fluid navbar-container">
+          <a class="navbar-brand nav-link brand" style="color:#1E73BE;font-weight: bold;" onclick='goToDashboard()'>Memorwise</a>
+            <div class="navbar-nav d-flex justify-content-center align-items-center" style>
+            </div>
+        </div>
+    </nav>
+    <button class=" light-grey small-shadow button-mods" id="back-button">返回首页</button>
+    <div class="content-container">
+        <div style="padding-top:20px;">
+            <h1 style="font-weight: bold;margin-bottom: 10px;">我们明白。</h1>
+            <p>为托福、雅思、SSAT 等英语考试记住数千个单词是非常烦人和困难的。这正是 Memorwise 在这里的原因。 Memorwise 成立于加拿大温哥华，是一款在线英语词汇培训软件，它将记忆单词及其定义的过程变成有史以来最有趣的体验。这个过程不仅让孩子们感到愉快，而且我们的团队开发了一个基于科学的记忆系统来优化您孩子的学习。无论是雅思、托福、SSAT，还是只是为了好玩，我们都能满足您的需求！</p>
+            <h1 style="font-weight: bold;margin-bottom: 10px;margin-top:15px">我们通过以下方式为学生创造有趣的体验：</h1>
+            <ul style="color:#616161">
+                <li>游戏内角色定制的帽子商店</li>
+                <li>动态角色</li>
+                <li>回顾模式，您可以复习已经学过的单词</li>
+                <li>挑战模式，看看您与全球学生的竞争表现如何</li>
+                <li>有趣的颜色和五彩纸屑</li>
+                <li>计时器和倒计时</li>
+                <li>每周奖励</li>
+            </ul>
+            <h1 style="font-weight: bold;margin-bottom: 10px;margin-top:15px">团队:</h1>
+            <div class="team-member-container">
+                <h4 class="name">Aaron Zhao</h4>
+                <p class="role">创始人、前端开发负责人</p>
+                <!-- <p class="biography">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore voluptates quia, aut voluptate accusantium placeat culpa eum quibusdam deleniti? Rerum dicta, deleniti similique consequatur quas numquam placeat tenetur deserunt vel.</p> -->
+                <h4 class="name">Muhan Sun</h4>
+                <p class="role">后端工程师</p>
+                <!-- <p class="biography">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore voluptates quia, aut voluptate accusantium placeat culpa eum quibusdam deleniti? Rerum dicta, deleniti similique consequatur quas numquam placeat tenetur deserunt vel.</p> -->
+                <h4 class="name">Kane Wes</h4>
+                <p class="role">网络安全主管</p>
+                <!-- <p class="biography">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore voluptates quia, aut voluptate accusantium placeat culpa eum quibusdam deleniti? Rerum dicta, deleniti similique consequatur quas numquam placeat tenetur deserunt vel.</p> -->
+                <h4 class="name">Sarah Wang</h4>
+                <p class="role">UI/UX 主管</p>
+                <!-- <p class="biography">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore voluptates quia, aut voluptate accusantium placeat culpa eum quibusdam deleniti? Rerum dicta, deleniti similique consequatur quas numquam placeat tenetur deserunt vel.</p> -->
+            </div>
+        </div>
+    </div>
+    <div class="bg-white flex-column align-items-center p-2" id="footer-links" style="z-index: 1;display: flex;">
+        <div class="mb-2">
+            <a class="m-2 footer-links" href="about-us.html">公司简介</a>
+            <a class="m-2 footer-links" href="contact-us.html">联系我们</a>
+        </div>
+        <span>&copy; 2024, Memorwise. All Rights Reserved</span>
+    </div>
+    <script>
+        document.getElementById('back-button').addEventListener("click",function(){
+            document.body.style.opacity="0";
+            history.back();
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+</body>
+</html>
