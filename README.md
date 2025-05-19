@@ -9,3 +9,4 @@ As the lead developer of this project, I faciliated effective communcation betwe
 - JavaScript
 - Bootstrap
 - Firebase (Functions for backend functions, Firestore for database)
+- anime.js and confetti-js (packages used for graphics animations for cartoon characters)
